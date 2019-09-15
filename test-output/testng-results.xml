@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-09-15T02:16:20 IST" name="Default suite" finished-at="2019-09-15T02:16:49 IST" duration-ms="28625">
+  <suite started-at="2019-09-15T19:22:53 IST" name="Default suite" finished-at="2019-09-15T19:23:26 IST" duration-ms="33128">
     <groups>
     </groups>
-    <test started-at="2019-09-15T02:16:20 IST" name="Default test" finished-at="2019-09-15T02:16:49 IST" duration-ms="28625">
-      <class name="com.demo.WebElemntScreenshot">
-        <test-method signature="WebElementScreenshot()[pri:0, instance:com.demo.WebElemntScreenshot@50caa560]" started-at="2019-09-15T02:16:21 IST" name="WebElementScreenshot" finished-at="2019-09-15T02:16:49 IST" duration-ms="28538" status="PASS">
+    <test started-at="2019-09-15T19:22:53 IST" name="Default test" finished-at="2019-09-15T19:23:26 IST" duration-ms="33128">
+      <class name="com.demo.TakeScreenshotFileHandlerClass">
+        <test-method signature="TakeScreenshotFileHandler()[pri:0, instance:com.demo.TakeScreenshotFileHandlerClass@50caa560]" started-at="2019-09-15T19:22:53 IST" name="TakeScreenshotFileHandler" finished-at="2019-09-15T19:23:26 IST" duration-ms="33058" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- WebElementScreenshot -->
-      </class> <!-- com.demo.WebElemntScreenshot -->
+        </test-method> <!-- TakeScreenshotFileHandler -->
+      </class> <!-- com.demo.TakeScreenshotFileHandlerClass -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

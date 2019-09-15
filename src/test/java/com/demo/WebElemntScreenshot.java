@@ -11,20 +11,20 @@ import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class WebElemntScreenshot {
-	
+
 	WebDriver driver = null;
 
-  @Test
-  public void WebElementScreenshot() {
-	  
-	  WebDriverManager.chromedriver().setup();
-	  driver = new ChromeDriver();
+	@Test
+	public void WebElementScreenshot() {
+
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		
+
 		String url = "http://demo.automationtesting.in/Register.html";
 		driver.get(url);
 		WebElement logo = driver.findElement(By.xpath("//img[@id='imagetrgt']"));
-		
+
 		Shutterbug.shootElement(driver, logo).withName("logo").save();
-  }
+	}
 }
