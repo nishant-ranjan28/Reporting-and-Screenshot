@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -27,7 +28,10 @@ public class TakeScreenshotFileHandlerClass {
 		Thread.sleep(5000);
 		
 		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("E://New Eclipse//com.demo//screenshots//image.png"));
+		//FileUtils.copyFile(screenshot, new File("E://New Eclipse//com.demo//screenshots//image.png"));
+		
+		FileHandler.copy(screenshot, new File("E://New Eclipse//com.demo//screenshots//image2.png"));
+		
 		Thread.sleep(5000);
 
 	}
