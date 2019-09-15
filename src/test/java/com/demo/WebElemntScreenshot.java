@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class WebElemntScreenshot {
 	
 	WebDriver driver = null;
@@ -15,6 +17,7 @@ public class WebElemntScreenshot {
   @Test
   public void WebElementScreenshot() {
 	  
+	  WebDriverManager.chromedriver().setup();
 	  driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		

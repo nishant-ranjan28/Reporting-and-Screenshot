@@ -6,14 +6,16 @@ import org.testng.annotations.Test;
 
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class PageScreenshot {
 
 	WebDriver driver = null;
-	int scrollTimeout;
 
 	@Test
 	public void TakeFullScreenshot() throws InterruptedException {
 
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		
