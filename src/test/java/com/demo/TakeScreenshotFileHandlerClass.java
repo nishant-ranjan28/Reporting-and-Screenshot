@@ -2,7 +2,6 @@ package com.demo;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,26 +28,28 @@ public class TakeScreenshotFileHandlerClass {
 		String url = "http://demo.automationtesting.in/Register.html";
 		driver.get(url);
 		Thread.sleep(5000);
-		
+
 		String path = "E://New Eclipse//com.demo//screenshots";
-		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		//FileUtils.copyFile(screenshot, new File("E://New Eclipse//com.demo//screenshots//image.png"));
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		// FileUtils.copyFile(screenshot, new File("E://New
+		// Eclipse//com.demo//screenshots//image.png"));
 		FileHandler.copy(screenshot, new File(path + "//image3.png"));
-		
+
 		captureScreennshot("screenshot");
-		
+
 		Thread.sleep(5000);
 
 	}
-	
+
 	public static void captureScreennshot(String screenShotName) throws IOException {
-		
+
 		SimpleDateFormat formater = new SimpleDateFormat("MMddyyyy");
 		Date date = new Date();
 		String ScreenshotNameFormat = screenShotName + " " + formater.format(date);
-		
-		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("E://New Eclipse//com.demo//screenshots//" + ScreenshotNameFormat + ".png"));
-		
+
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot,
+				new File("E://New Eclipse//com.demo//screenshots//" + ScreenshotNameFormat + ".png"));
+
 	}
 }
