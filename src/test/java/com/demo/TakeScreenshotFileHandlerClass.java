@@ -2,6 +2,9 @@ package com.demo;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -15,7 +18,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TakeScreenshotFileHandlerClass {
 
-	WebDriver driver = null;
+	static WebDriver driver = null;
 
 	@Test
 	public void TakeScreenshotFileHandler() throws InterruptedException, IOException {
@@ -27,12 +30,25 @@ public class TakeScreenshotFileHandlerClass {
 		driver.get(url);
 		Thread.sleep(5000);
 		
+		String path = "E://New Eclipse//com.demo//screenshots";
 		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		//FileUtils.copyFile(screenshot, new File("E://New Eclipse//com.demo//screenshots//image.png"));
+		FileHandler.copy(screenshot, new File(path + "//image3.png"));
 		
-		FileHandler.copy(screenshot, new File("E://New Eclipse//com.demo//screenshots//image2.png"));
+		captureScreennshot("screenshot");
 		
 		Thread.sleep(5000);
 
+	}
+	
+	public static void captureScreennshot(String screenShotName) throws IOException {
+		
+		SimpleDateFormat formater = new SimpleDateFormat("MMddyyyy");
+		Date date = new Date();
+		String ScreenshotNameFormat = screenShotName + " " + formater.format(date);
+		
+		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("E://New Eclipse//com.demo//screenshots//" + ScreenshotNameFormat + ".png"));
+		
 	}
 }
