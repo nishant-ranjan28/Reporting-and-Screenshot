@@ -49,6 +49,7 @@ public class HandleWindow {
 
 		// Get All open window details
 		Set<String> allWindowHandles = driver.getWindowHandles();
+		String lastWindowHandle = "";
 
 		//Open Multiple Window with loop. (Same Link)
 		/*
@@ -63,8 +64,15 @@ public class HandleWindow {
 			driver.switchTo().window(handle); // Switch to the desired window first and then execute commands using
 												// driver
 			driver.get("http://google.com");
-
+			lastWindowHandle = handle;
 		}
-
+		
+		//Switch to parent window
+		driver.switchTo().window(parentWindowHandle);
+		driver.close();
+		//No focused window, explicitly switching back.
+		driver.switchTo().window(lastWindowHandle);
+		driver.get(url);
+		System.out.println("Back to base");
 	}
 }
