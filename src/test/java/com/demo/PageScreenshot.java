@@ -9,11 +9,8 @@ import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class PageScreenshot {
-
-	WebDriver driver = null;
-
-	@Test
-	public void TakeFullScreenshot() throws InterruptedException {
+	
+	public void TakeFullScreenshot(WebDriver driver) throws InterruptedException {
 
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
